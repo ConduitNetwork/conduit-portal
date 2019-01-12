@@ -4,6 +4,8 @@ const command = require('child_process');
 
 // command sequence array
 const commands = [
+  // pull any changes from remote
+  'git pull',
   // push commited work
   'git push',
   // stash untracked changes
