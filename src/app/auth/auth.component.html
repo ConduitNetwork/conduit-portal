@@ -1,0 +1,45 @@
+<!-- auth page navbar -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="/assets/conduit/icon_white_transparent.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/auth/login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/auth/register']">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="auth">
+  <div class="container">
+    <h2>Log into your account</h2>
+    <div class="card">
+      <div class="card-body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <div class="other-links">
+    <div *ngIf="router.url.includes('/login')">
+      <a [routerLink]="['/auth/register']">Don't have an account?</a>
+      <a [routerLink]="['/auth/reset']">Forgot password?</a>
+    </div>
+    <div *ngIf="router.url.includes('/register')">
+      <a [routerLink]="['/auth/login']">Already have an account?</a>
+    </div>
+    <div *ngIf="router.url.includes('/reset')">
+      <a [routerLink]="['/auth/login']">Ready to login?</a>
+      <a [routerLink]="['/auth/register']">Don't have an account?</a>
+    </div>
+  </div>
+</section>

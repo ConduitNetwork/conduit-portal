@@ -1,3 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './variables';
 @import '~bootstrap-scss/bootstrap.scss';
+
+input {
+  padding: 12px 15px!important;
+}
+
+*:focus {
+  outline: none!important;
+  box-shadow: none!important;
+}
+
+.form-control:focus {
+  border-color: $primary;
+}
+
+// navbar customizations
+.bg-dark {
+  background: #000!important;
+}
+.navbar-dark {
+  & .nav-item {
+    & .nav-link {
+      color: white;
+      line-height: 40px;
+      margin-left: 15px;
+      & .avatar {
+        font-size: 32px;
+        height: 32px;
+        line-height: 40px;
+        margin: 0px 0;
+        padding: 0;
+      }
+    }
+  }
+}

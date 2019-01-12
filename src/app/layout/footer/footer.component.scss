@@ -1,0 +1,24 @@
+@import '../../../variables';
+
+.row > div {
+  margin-bottom: 25px;
+}
+
+ul {
+  font-size: 15px;
+  & li {
+    margin-bottom: 4px;
+  }
+}
+
+.company {
+  min-width: 300px;
+}
+
+.contribute {
+  text-align: right;
+  max-width: 120px;
+  & ul, & h5 {
+    text-align: left;
+  }
+}

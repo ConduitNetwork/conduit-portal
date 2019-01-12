@@ -1,0 +1,48 @@
+@import '../../../variables';
+
+.ng2-tag-input__text-input {
+  font-family: inherit!important;
+}
+
+.ng2-tag-input {
+  border: 1px solid #ced4da!important;
+  &:focus {
+    border-color: #720072!important;
+  }
+}
+
+.ng2-tag-input--focused {
+  border: 1px solid #720072!important;
+}
+
+.ng2-tag-input, .ng2-tag-input--focused {
+  padding: 5px!important;
+  min-height: 150px!important;
+  border-radius: 2.8px!important;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out!important;
+
+  & tag {
+    background: $primary!important;
+    border-radius: 3px!important;
+    color: white!important;
+    height: 40px!important;
+    line-height: 40px!important;
+    font-weight: normal!important;
+    padding: 0 10px!important;
+    font-family: inherit!important;
+    letter-spacing: inherit!important;
+    box-shadow: none!important;
+  }
+  & delete-icon {
+    line-height: 38px!important;
+    &:hover {
+      transform: none!important;
+    }
+    & svg {
+      & path {
+        fill: #fff!important;
+      }
+    }
+  }
+}

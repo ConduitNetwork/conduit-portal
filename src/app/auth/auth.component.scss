@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.navbar-brand {
+  > img {
+    height: 70px;
+  }
+}
+
+section.auth {
+  padding: 150px 0 250px 0;
+  background: $primary-gradient;
+  & .card {
+    max-width: 400px;
+    margin: auto;
+    box-shadow: rgba(2, 56, 47, 0.15) 0px 10px 25px;
+  }
+  & h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 35px;
+  }
+  & .other-links {
+    text-align: center;
+    margin-top: 30px;
+    & a {
+      color: rgba(255, 255, 255, 0.9);
+      padding: 0 10px;
+    }
+  }
+}
