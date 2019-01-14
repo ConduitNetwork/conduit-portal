@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CoverComponent } from './cover/cover.component';
 import { ResetComponent } from './auth/reset/reset.component';
+import { ProjectDetailsComponent } from './account/project-details/project-details.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent
+      },
+      {
+        path: 'projects/:id',
+        component: ProjectDetailsComponent
       }
     ]
   }
@@ -53,7 +58,8 @@ export const COMPONENTS = [
   LoginComponent,
   RegisterComponent,
   CoverComponent,
-  ResetComponent
+  ResetComponent,
+  ProjectDetailsComponent
 ]
 
 @NgModule({

@@ -1,3 +1,113 @@
-<p>
-  projects works!
-</p>
+<!-- No New Projects -->
+<div class="row" *ngIf="projects.length === 0">
+  <div class="col-lg-6 offset-lg-3">
+    <div id="get-started">
+      <img src="assets/conduit/icon_transparent.png">
+      <h1>Getting Started</h1>
+      <p class="text-dark mt-3 mb-4">
+        You have no projects yet. Import an existing project or
+        <br>
+        create a new one from one of our starter templates
+      </p>
+      <button type="submit" class="btn btn-block btn-lg btn-outline-dark">
+        ADD EXISTING PROJECT
+      </button>
+      <button type="submit" (click)="createProject(newProject)" class="btn btn-block btn-lg btn-primary">
+        CREATE A NEW PROJECT
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Project List -->
+<div class="list-group" *ngIf="projects.length > 0">
+  <div class="list-group-item flex-column align-items-start">
+    <div class="d-flex justify-content-between">
+      <input class="form-control filter mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <div class="action-buttons">
+        <button type="button" class="btn btn-outline-dark mr-2">IMPORT</button>
+        <button type="button" class="btn btn-primary" (click)="createProject(newProject)">NEW PROJECT</button>
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="['/account/projects', '123']" *ngFor="let project of projects" class="list-group-item flex-column align-items-start">
+    <div class="image">{{project.name[0]}}</div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 class="mb-0">{{project.name}}</h3>
+        <p class="mb-0 text-secondary">{{project.description}}</p>
+      </div>
+      <div>
+        <h5 class="mt-1">0 Jobs</h5>
+        <small>3 days ago</small>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<!-- New Project Modal -->
+<ng-template #newProject let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Create a New Project</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss(false)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="planName">TITLE</label>
+        <input type="text" name="projectTitle" id="planName" class="form-control" [(ngModel)]="newProject.title">
+      </div>
+      <div class="form-group">
+        <label for="planPrice">DESCRIPTION</label>
+        <input type="number" name="projectPrice" id="planPrice" class="form-control" [(ngModel)]="newProject.description">
+      </div>
+      <div class="form-group">
+        <label for="planPrice">LOCAL PATH</label>
+        <div class="form-row">
+          <div class="col-8">
+            <input type="text" name="projectPath" class="form-control" [(ngModel)]="newProject.path">
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-block btn-outline-dark">Choose...</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="planPrice">LANGUAGE</label>
+        <ng-select name="projectLanguage" [searchable]="false" [(ngModel)]="newProject.language">
+          <ng-option *ngFor="let language of languages" [value]="language.name" [disabled]="false" >
+            {{language.label}}
+          </ng-option>
+        </ng-select>
+      </div>
+      <br>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-9">
+            <h5>Generate Starter Template</h5>
+            <small class="text-muted">This helps you do this and that quicker...</small>
+          </div>
+          <div class="col-3 toggle-switch">
+            <ui-switch
+              [checked]="true"
+              size="large"
+              color="black"
+              switchColor="white"
+              defaultBoColor="black"
+              labelOn='<i class="fas mt-1 ml-1 fa-check"></i>'>
+            </ui-switch>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-block btn-primary" (click)="modal.close('true')" [disabled]="!formValid()">CREATE PROJECT</button>
+  </div>
+</ng-template>

@@ -2,7 +2,12 @@
 
 @import './variables';
 @import '~bootstrap-scss/bootstrap.scss';
+@import './assets/css/ng-select.scss';
+// @import '~ngx-ui-switch/ui-switch.component.scss';
 
+label {
+  font-size: 12px;
+}
 input {
   padding: 12px 15px!important;
 }
@@ -16,16 +21,49 @@ input {
   border-color: $primary;
 }
 
+.form-row {
+  & .btn {
+    padding: 10px!important;
+  }
+}
+
+.btn {
+  font-size: 12px;
+  line-height: 28px;
+  border-radius: 3px;
+}
+
+.modal {
+  & .modal-header {
+    border-width: 0;
+  }
+  & .modal-footer {
+    border-width: 0;
+    padding-bottom: 30px;
+    & .btn {
+      padding: 12px;
+    }
+  }
+}
+
 // navbar customizations
 .bg-dark {
   background: #000!important;
 }
 .navbar-dark {
   & .nav-item {
+    & .dropdown-menu.show {
+      top: 61px!important;
+      border-radius: 0 0 5px 5px!important;
+      // border-color: #444!important;
+    }
     & .nav-link {
       color: white;
       line-height: 40px;
       margin-left: 15px;
+      &:focus, &:hover {
+        color: white;
+      }
       & .avatar {
         font-size: 32px;
         height: 32px;
