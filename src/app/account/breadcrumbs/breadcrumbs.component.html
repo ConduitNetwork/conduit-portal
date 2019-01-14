@@ -1,0 +1,16 @@
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="global.pageConfig.routeUrl">
+          {{global.pageConfig.label}}
+        </a>
+      </li>
+        <li *ngFor="let breadcrumb of global.pageConfig.breadcrumbs" class="breadcrumb-item">
+          <a [routerLink]="breadcrumb.routeUrl">
+            {{breadcrumb.label}}
+          </a>
+        </li>
+    </ol>
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+.breadcrumb-nav {
+  background-color: #e9ecef;
+  & .container {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  > li + li:before {
+    font-weight: bold;
+    padding-right: 14px;
+    padding-left: 18px;
+    // content: "\0203A";
+    // font-size: 26px;
+    // line-height: 0px;
+    // position: relative;
+    // top: 2px;
+  }
+}
+
+.breadcrumb-item {
+  &:first-child {
+    text-transform: uppercase;
+  }
+  & a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
