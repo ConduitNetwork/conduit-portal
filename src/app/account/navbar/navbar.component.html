@@ -1,40 +1,35 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand bg-dark navbar-dark">
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/']">
       <img src="assets/conduit/icon_transparent.png">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <!-- Left menu -->
-      <ul class="navbar-nav mr-auto">
-        <li ngbDropdown class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Projects
-          </a>
-          <!-- <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div> -->
-        </li>
-      </ul>
-      <!-- Right menu -->
-      <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item">
-          <a class="nav-link account d-flex flex-row" [routerLink]="['/account']">
-            <span class="avatar pr-2"><i class="fas fa-user-circle"></i></span>
-            <span class="email">demo@user.com</span>
-          </a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/auth/login']">Settings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/auth/login']">Logout</a>
-        </li>
-      </ul>
-    </div>
+    <!-- Left menu -->
+    <ul class="navbar-nav mr-auto">
+      <li ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Projects
+        </a>
+        <!-- <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div> -->
+      </li>
+    </ul>
+    <!-- Right menu -->
+    <ul class="navbar-nav ml-auto">
+      <!-- <li class="nav-item">
+        <a class="nav-link account d-flex flex-row" [routerLink]="['/account']">
+          <span class="avatar pr-2"><i class="fas fa-user-circle"></i></span>
+          <span class="email">demo@user.com</span>
+        </a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/auth/login']">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/auth/login']">Logout</a>
+      </li>
+    </ul>
   </div>
 </nav>
