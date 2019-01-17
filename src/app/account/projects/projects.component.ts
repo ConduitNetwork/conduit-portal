@@ -8,6 +8,7 @@ import { GlobalService } from '../../services/global.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  projectFilter: any = { name: '' }
   newProject: any;
 
   languages: any = [

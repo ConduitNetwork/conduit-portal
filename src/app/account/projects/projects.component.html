@@ -25,22 +25,22 @@
 <div class="list-group" *ngIf="projects.length > 0">
   <div class="list-group-item flex-column align-items-start">
     <div class="d-flex justify-content-between">
-      <input class="form-control filter mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control filter mr-sm-2" [(ngModel)]="projectFilter.name" type="search" placeholder="Search" aria-label="Search">
       <div class="action-buttons">
         <button type="button" class="btn btn-outline-dark mr-2">IMPORT</button>
         <button type="button" class="btn btn-primary" (click)="createProject(newProject)">NEW PROJECT</button>
       </div>
     </div>
   </div>
-  <a [routerLink]="['/account/projects', '123']" *ngFor="let project of projects" class="list-group-item flex-column align-items-start">
+  <a [routerLink]="['/account/projects', '123']" *ngFor="let project of projects | filterBy: projectFilter" class="list-group-item flex-column align-items-start">
     <div class="image">{{project.name[0]}}</div>
     <div class="d-flex justify-content-between">
       <div>
-        <h3 class="mb-0">{{project.name}}</h3>
+        <h4 class="mb-1">{{project.name}}</h4>
         <p class="mb-0 text-secondary">{{project.description}}</p>
       </div>
       <div>
-        <h5 class="mt-1">0 Jobs</h5>
+        <h5 class="mt-1 mb-2">0 Jobs</h5>
         <small>3 days ago</small>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { UiSwitchModule } from 'ngx-toggle-switch';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 import { AppRoutingModule, COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.componen
     FontAwesomeModule,
     ReactiveFormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FilterPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
