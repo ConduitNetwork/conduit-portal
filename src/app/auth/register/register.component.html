@@ -1,12 +1,12 @@
-<form>
+<form (submit)="submit()">
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="Email">
+    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email">
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Password">
+    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password">
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Confirm Password">
+    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" [(ngModel)]="confirm_password">
   </div>
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -17,5 +17,5 @@
     </label>
   </div>
   <br>
-  <button type="submit" [routerLink]="['/account']" class="btn btn-block btn-lg btn-primary">Create account</button>
+  <button type="submit" class="btn btn-block btn-lg btn-primary">Create account</button>
 </form>
