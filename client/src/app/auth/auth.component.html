@@ -17,7 +17,15 @@
 
 <section class="auth">
   <div class="container">
-    <h2>Log into your account</h2>
+    <h2 *ngIf="router.url.includes('/login')">
+      Log into your account
+    </h2>
+    <h2 *ngIf="router.url.includes('/register')">
+      Register new account
+    </h2>
+    <h2 *ngIf="router.url.includes('/reset')">
+      Reset Password
+    </h2>
     <div class="card">
       <div class="card-body">
         <router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../auth.component.scss']
 })
 export class ResetComponent implements OnInit {
+  email: string = '';
 
   constructor() { }
 

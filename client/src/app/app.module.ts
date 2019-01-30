@@ -17,6 +17,14 @@ import { AccountNavbarComponent } from './account/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.component';
 
+import { JwtModule } from '@auth0/angular-jwt';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +44,18 @@ import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.componen
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    FilterPipeModule
+    FilterPipeModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: [
+          'localhost:3000'
+        ],
+        blacklistedRoutes:  [
+          'localhost:3000/api/auth'
+        ]
+      }
+    })
   ],
   providers: [
     AuthService,

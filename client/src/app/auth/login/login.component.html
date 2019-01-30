@@ -1,4 +1,5 @@
-<form (submit)="submit()">
+<h4 *ngIf="error">{{error}}</h4>
+<form (submit)="login()">
   <div class="form-group">
     <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email">
   </div>
@@ -14,5 +15,5 @@
     </label>
   </div>
   <br>
-  <button type="submit" class="btn btn-block btn-lg btn-primary">Log in</button>
+  <button type="submit" class="btn btn-block btn-lg btn-primary">LOG IN</button>
 </form>
