@@ -2,8 +2,6 @@
 module.exports = (router) => {
 
   router.get('/users', (req, res) => {
-
-    console.log('hiii')
     res.json(users)
   })
 

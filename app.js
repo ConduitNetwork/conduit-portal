@@ -1,28 +1,44 @@
-'use strict'
-const path = require('path')
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const compression = require('compression')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const app = express()
-const router = express.Router()
+'use strict';
 
-router.use(compression())
+require( 'dotenv' ).config();
 
-router.use(cors())
-router.use(bodyParser.json())
-router.use(bodyParser.urlencoded({ extended: true }))
-router.use(awsServerlessExpressMiddleware.eventContext())
+const path          = require( 'path' );
+const express       = require( 'express' );
+const bodyParser    = require( 'body-parser' );
+const cors          = require( 'cors');
+const compression   = require( 'compression' );
+const awsMiddleware = require( 'aws-serverless-express/middleware' );
+const app           = express();
+const router        = express.Router();
+const auth          = require( './lib/auth' );
+const expressJwt    = require( 'express-jwt' );
 
+router.use( compression() );
+router.use( cors() );
+router.use( bodyParser.json() );
+router.use( bodyParser.urlencoded({ extended: true }) );
+router.use( awsMiddleware.eventContext() );
+
+// Authenticate requests
+router.use(( req, res, next ) => {
+  auth.validateToken( req, res, next );
+})
 
 // Image server
-router.get('/api/images/:filename', (req, res) => {
-  res.sendFile(`${__dirname}/images/${req.params.filename}`)
+router.get( '/api/images/:filename', ( req, res ) => {
+  res.sendFile( `${__dirname}/images/${req.params.filename}` )
 })
 
 // API routes
-app.use(require('./api')(router));
+app.use( require('./api')( router ));
+
+app
+.use( expressJwt({
+  secret: process.env.APP_SECRET
+})
+.unless({
+  path: [ '/api/auth' ]
+}));
 
 // Export your express server so you can import it in the lambda function.
 module.exports = app

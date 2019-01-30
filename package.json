@@ -1,7 +1,7 @@
 {
-  "name": "aws-serverless-express-example",
+  "name": "conduit",
   "version": "2.1.1",
-  "description": "Example application for running a Node Express app on AWS Lambda using Amazon API Gateway.",
+  "description": "Conduit Web Portal AWS serverless stack (Lambda, S3, and API Gateway)",
   "main": "lambda.js",
   "config": {
     "s3BucketName": "conduit-assets",
@@ -13,7 +13,7 @@
   "scripts": {
     "install": "cd client && npm install",
     "client": "cd client && npm start",
-    "server": "node app.local.js",
+    "server": "nodemon app.local.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "config": "node ./scripts/configure.js",
     "deconfig": "node ./scripts/deconfigure.js",
@@ -44,7 +44,10 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
-    "express": "^4.15.2"
+    "dotenv": "^6.2.0",
+    "express": "^4.15.2",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.4.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
