@@ -3,7 +3,88 @@
 @import './variables';
 @import '~bootstrap-scss/bootstrap.scss';
 @import './assets/css/ng-select.scss';
+
+// Range Slider variables & import
+$slider-horizontal-width: 80% !default;
+
+@import '~bootstrap-slider/src/sass/bootstrap-slider.scss';
+
+.slider-selection.tick-slider-selection {
+  background-color: black;
+  background-image: none;
+  border-radius: 10px;
+}
+
+.slider.slider-horizontal {
+  width: calc(100% - 25px);
+  margin-left: 10px;
+  margin-top: -10px;
+
+  & .slider-track {
+    background: #ccc;
+    height: 12px;
+    margin-top: -6px;
+    border-radius: 10px;
+    width: calc(100% + 13px);
+    left: -10px;
+  }
+}
+
+.slider-tick {
+  height: 5px;
+  width: 5px;
+  top: 7px;
+  cursor: default;
+  background-color: black;
+  background-image: none;
+  &.in-selection {
+    background-color: black;
+    background-image: none;
+  }
+}
+
+.slider-handle.round {
+  border-radius: 100%;
+  border: 2px solid white;
+  width: 25px;
+  height: 25px;
+  top: -3px;
+}
+
+// Accordion
+ngb-accordion {
+  & .card {
+    border-width:0;
+    background: transparent;
+    padding: 0;
+    & .card-header {
+      padding: 0;
+      background: transparent;
+      border-width: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
+      & .btn {
+        padding: 0;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        color: black;
+        text-decoration: none;
+        & fa-icon {
+          font-size: 12px;
+          position: relative;
+          top: -3px;
+          margin-right: 5px;
+        }
+      }
+    }
+    & .card-body {
+      padding: 0;
+    }
+  }
+}
+
 // @import '~ngx-ui-switch/ui-switch.component.scss';
+
 
 label {
   font-size: 12px;

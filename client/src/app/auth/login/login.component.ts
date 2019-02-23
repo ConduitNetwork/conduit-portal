@@ -18,19 +18,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.api.post('auth/login', {
-      email: this.email,
+    this.api.post( 'auth/login', {
+      email:    this.email,
       password: this.password
     })
     .then(( data: AuthData ) => {
-      localStorage.setItem('access_token', data.token);
+      localStorage.setItem( 'access_token', data.token );
 
-      console.log(localStorage.getItem('access_token'));
-
-      this.router.navigate(['/account'])
+      this.router.navigate([ '/account' ]);
     })
     .catch(err => {
-      console.error(err);
+      console.error( err );
     })
   }
 

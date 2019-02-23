@@ -8,16 +8,21 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate {
   constructor(private router: Router) { }
 
-
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (localStorage.getItem('access_token')) {
+    if( localStorage.getItem( 'access_token' )) {
+
+      // if( state.url.includes( 'auth' )) {
+      //   this.router.navigate([ '/account' ]);
+      // }
       return true;
     }
 
-    this.router.navigate(['/auth/login']);
-    return false;
+    else {
+      this.router.navigate([ '/auth/login' ]);
+      return false;
+    }
   }
 }

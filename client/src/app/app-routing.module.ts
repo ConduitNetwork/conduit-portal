@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './services/auth/auth.guard';
 
 import { AccountComponent } from './account/account.component';
-import { ProjectsComponent } from './account/projects/projects.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CoverComponent } from './cover/cover.component';
 import { ResetComponent } from './auth/reset/reset.component';
+import { ProjectsComponent } from './account/projects/projects.component';
 import { ProjectDetailsComponent } from './account/project-details/project-details.component';
+import { JobsComponent } from './account/jobs/jobs.component';
 
 const routes: Routes = [
   {
@@ -17,8 +19,13 @@ const routes: Routes = [
     component: CoverComponent
   },
   {
+    path: 'logout',
+    component: LogoutComponent
+  },
+  {
     path: 'auth',
     component: AuthComponent,
+    // canActivate: [ AuthGuard ],
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
@@ -48,6 +55,10 @@ const routes: Routes = [
       {
         path: 'projects/:id',
         component: ProjectDetailsComponent
+      },
+      {
+        path: 'projects/:id/jobs/:jobId',
+        component: JobsComponent
       }
     ]
   }
@@ -61,11 +72,18 @@ export const COMPONENTS = [
   RegisterComponent,
   CoverComponent,
   ResetComponent,
-  ProjectDetailsComponent
+  ProjectDetailsComponent,
+  LogoutComponent,
+  JobsComponent
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled'
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

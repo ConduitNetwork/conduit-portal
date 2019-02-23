@@ -7,8 +7,13 @@ import { AuthGuard } from './services/auth/auth.guard';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { UiSwitchModule } from 'ngx-toggle-switch';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { AppRoutingModule, COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,8 +36,8 @@ export function tokenGetter() {
     NavbarComponent,
     AccountNavbarComponent,
     FooterComponent,
-    ...COMPONENTS,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    ...COMPONENTS
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ export function tokenGetter() {
     NgbModule,
     HttpClientModule,
     FilterPipeModule,
+    NgxBootstrapSliderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -52,7 +58,7 @@ export function tokenGetter() {
           'localhost:3000'
         ],
         blacklistedRoutes:  [
-          'localhost:3000/api/auth'
+          // 'localhost:3000/api/auth'
         ]
       }
     })
@@ -63,4 +69,8 @@ export function tokenGetter() {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(fas, far, fab);
+  }
+}

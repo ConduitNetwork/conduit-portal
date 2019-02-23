@@ -17,6 +17,17 @@ export interface PageConfig {
 })
 
 export class GlobalService {
+  public languages: any = [
+    { name: 'python', label: 'Python' },
+    { name: 'go',     label: 'Go Lang' },
+    { name: 'ruby',   label: 'Ruby' },
+    { name: 'nodejs', label: 'Node.js' }
+  ]
+  public operatingSystems: any = [
+    { name: 'linux',   label: 'Linux' },
+    { name: 'windows', label: 'Windows' }
+  ]
+
   private _pageConfig: PageConfig = {
     label:       '',
     routeUrl:    '',

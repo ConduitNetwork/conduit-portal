@@ -67,6 +67,28 @@
         <label for="planPrice">DESCRIPTION</label>
         <input type="number" name="projectPrice" id="planPrice" class="form-control" [(ngModel)]="newProject.description">
       </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-6">
+            <label for="planPrice">LANGUAGE</label>
+            <ng-select name="projectLanguage" [searchable]="false" [(ngModel)]="newProject.language">
+              <ng-option *ngFor="let language of global.languages" [value]="language.name" [disabled]="false" >
+                {{language.label}}
+              </ng-option>
+            </ng-select>
+          </div>
+          <div class="col-6">
+            <label for="planPrice">OPERATING SYSTEM</label>
+            <ng-select name="projectOs" [searchable]="false" [(ngModel)]="newProject.os">
+              <ng-option *ngFor="let os of global.operatingSystems" [value]="os.name" [disabled]="false" >
+                {{os.label}}
+              </ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="planPrice">LOCAL PATH</label>
         <div class="form-row">
@@ -78,14 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <label for="planPrice">LANGUAGE</label>
-        <ng-select name="projectLanguage" [searchable]="false" [(ngModel)]="newProject.language">
-          <ng-option *ngFor="let language of languages" [value]="language.name" [disabled]="false" >
-            {{language.label}}
-          </ng-option>
-        </ng-select>
-      </div>
+
       <br>
       <div class="form-group">
         <div class="form-row">

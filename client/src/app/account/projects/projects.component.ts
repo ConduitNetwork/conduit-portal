@@ -10,33 +10,15 @@ import { GlobalService } from '../../services/global.service';
 export class ProjectsComponent implements OnInit {
   projectFilter: any = { name: '' }
   newProject: any;
-
-  languages: any = [
-    {
-      name: 'python',
-      label: 'Python'
-    },
-    {
-      name: 'go',
-      label: 'Go Lang'
-    },
-    {
-      name: 'ruby',
-      label: 'Ruby'
-    },
-    {
-      name: 'nodejs',
-      label: 'Node.js'
-    }
-  ]
   projects: any = [];
 
   constructor(
     private modalService: NgbModal,
-    private global: GlobalService
+    public global: GlobalService
   ) { }
 
   ngOnInit() {
+    this.global.pageConfig.breadcrumbs = [];
   }
 
   createProject( content ) {

@@ -1,0 +1,21 @@
+<div *ngIf="dataAvailable">
+  <div class="project-header">
+    <div class="image">{{project.name[0]}}</div>
+    <div class="project-details">
+      <h2 class="mb-1">{{project.name}}</h2>
+      <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+    </div>
+    <!-- <h4 class="job-count" [routerLink]="['../']" fragment="jobs">{{jobs.length}} Jobs</h4> -->
+  </div>
+
+  <div class="action-bar row">
+    <div class="col-9">
+      <button type="button" class="btn btn-sm btn-outline-dark p-7">finished</button>
+      <span>{{job.id}}</span>
+      <span>{{job.starttime}}</span>
+    </div>
+    <div class="col-3">
+      <button type="button" class="btn btn-block btn-lg btn-primary">VIEW RESULTS</button>
+    </div>
+  </div>
+</div>
