@@ -4,11 +4,11 @@
   "description": "Conduit Web Portal AWS serverless stack (Lambda, S3, and API Gateway)",
   "main": "lambda.js",
   "config": {
-    "s3BucketName": "conduit-assets",
-    "region": "us-east-2",
+    "s3BucketName": "conduit-api",
+    "region": "us-east-1",
     "cloudFormationStackName": "AwsServerlessExpressStack",
     "functionName": "ConduitAPI",
-    "accountId": "123456789012"
+    "accountId": "412301372935"
   },
   "scripts": {
     "install": "cd client && npm install",
