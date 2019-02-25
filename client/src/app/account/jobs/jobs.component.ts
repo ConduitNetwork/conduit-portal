@@ -30,10 +30,10 @@ export class JobsComponent implements OnInit {
 
   getJob( project, id = this.activeRoute.snapshot.params.id ) {
     if( project ) {
-      this.api.get( `jobs/${id}` ).then( job => {
+      this.api.get( `jobs/${id}` ).then(( job: Job ) => {
         this.job = job;
 
-        this.global.pageConfig.breadcrumbs.push( this.job )
+        this.global.pageConfig.breadcrumbs.push( this.job.breadcrumb )
 
         this.dataAvailable = true;
 
@@ -42,7 +42,7 @@ export class JobsComponent implements OnInit {
       })
     }
     else {
-      this.api.get( `projects/${id}` ).then( project => {
+      this.api.get( `projects/${id}` ).then(( project: Project ) => {
         this.project = project;
 
         this.getJob( true )

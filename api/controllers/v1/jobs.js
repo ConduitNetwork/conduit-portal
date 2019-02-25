@@ -8,8 +8,13 @@ module.exports = ( router ) => {
 
   router.get( '/jobs/:id', ( req, res ) => {
     const job = {
-      uuid:  req.params.id,
+      uuid:        req.params.id,
       starttime:   Date.now(),
+      breadcrumb: {
+        label:       req.params.id.trim().replace(' ', '-').toLowerCase(),
+        routeUrl:    req.path,
+        description: `job ${req.params.id}`
+      },
       config: {
         managerScriptPath: '',
         workerScriptPath: '',

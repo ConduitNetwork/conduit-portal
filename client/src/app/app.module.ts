@@ -10,10 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { AppRoutingModule, COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -69,8 +65,4 @@ export function tokenGetter() {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-    library.add(fas, far, fab);
-  }
-}
+export class AppModule { }

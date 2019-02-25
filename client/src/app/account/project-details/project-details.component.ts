@@ -4,12 +4,6 @@ import { GlobalService } from '../../services/global.service';
 import { ApiService } from '../../services/api/api.service';
 import { Project, Job } from '../../app.interfaces';
 
-export interface Job {
-  id: string;
-  starttime: string;
-  status: string;
-}
-
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',
@@ -35,7 +29,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   getProject( id ) {
-    this.api.get( `projects/${id}` ).then( project => {
+    this.api.get( `projects/${id}` ).then(( project: Project ) => {
       this.project = project;
       this.global.pageConfig.breadcrumbs.push( this.project )
 
@@ -44,14 +38,54 @@ export class ProjectDetailsComponent implements OnInit {
 
     this.jobs = [
       {
-        id: '87fd73hfdjf93298fj38229393brhkf43',
-        starttime: '2 minutes ago',
-        status: 'running'
+        uuid:  '12345j',
+        starttime:   Date.now(),
+        breadcrumb: {
+          label:       '12345j',
+          routeUrl:    'jobs/12345j',
+          description: `job 12345j`
+        },
+        config: {
+          managerScriptPath: '',
+          workerScriptPath: '',
+          computeResources: "1,5120,5120" // Comma seperated string for CPU Cores, RAM(MB), & HDD(MB), Ex: "1,5120,5120"
+        },
+        status: {
+          duration: 0,
+          activeWorkers: 2,
+          tasksComplete: ""
+        },
+        variables: [
+          {
+            key: "SOME_VAR",
+            value: "the_value_of_some_var"
+          }
+        ]
       },
       {
-        id: '87fd73hfdjf93298fj38229393brhkf43',
-        starttime: '5 minutes ago',
-        status: 'finished'
+        uuid:  '12345j',
+        starttime:   Date.now(),
+        breadcrumb: {
+          label:       '12345j',
+          routeUrl:    'jobs/12345j',
+          description: `job 12345j`
+        },
+        config: {
+          managerScriptPath: '',
+          workerScriptPath: '',
+          computeResources: "1,5120,5120" // Comma seperated string for CPU Cores, RAM(MB), & HDD(MB), Ex: "1,5120,5120"
+        },
+        status: {
+          duration: 0,
+          activeWorkers: 2,
+          tasksComplete: ""
+        },
+        variables: [
+          {
+            key: "SOME_VAR",
+            value: "the_value_of_some_var"
+          }
+        ]
       }
     ]
   }

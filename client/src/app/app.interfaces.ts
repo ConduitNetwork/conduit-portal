@@ -1,4 +1,3 @@
-
 // Project configuration
 export interface ProjectConfig {
   managerScriptPath: string;
@@ -33,6 +32,7 @@ export interface JobStatus {
 
 // Project job
 export interface Job {
+  breadcrumb: any;
   uuid:      string;
   starttime: number;
   status:    JobStatus;
