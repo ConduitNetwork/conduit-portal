@@ -51,10 +51,12 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: [
-          'localhost:3000'
+          'localhost:3000',
+          'conduitcompute.cloud'
         ],
         blacklistedRoutes:  [
-          // 'localhost:3000/api/auth'
+          'localhost:3000/api/auth',
+          'conduitcompute.cloud/api/auth'
         ]
       }
     })

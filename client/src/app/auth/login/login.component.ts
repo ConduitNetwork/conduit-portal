@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['../auth.component.scss']
 })
 export class LoginComponent implements OnInit {
-  email:    string = 'user1@email.com';
+  email:    string = 'demo@user.com';
   password: string = 'password';
 
   constructor( private api: ApiService, private router: Router ) { }

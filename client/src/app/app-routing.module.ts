@@ -33,6 +33,10 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
+        path: 'logout',
+        component: LogoutComponent
+      },
+      {
         path: 'register',
         component: RegisterComponent
       },

@@ -19,10 +19,10 @@ router.use( bodyParser.json() );
 router.use( bodyParser.urlencoded({ extended: true }) );
 router.use( awsMiddleware.eventContext() );
 
-// Authenticate requests
-router.use(( req, res, next ) => {
-  auth.validateToken( req, res, next );
-})
+// servic static assets
+app.use(express.static('public'))
+
+auth.validateAuthToken( app );
 
 // Image server
 router.get( '/api/images/:filename', ( req, res ) => {
@@ -32,13 +32,6 @@ router.get( '/api/images/:filename', ( req, res ) => {
 // API routes
 app.use( require('./api')( router ));
 
-app
-.use( expressJwt({
-  secret: process.env.APP_SECRET
-})
-.unless({
-  path: [ '/api/auth' ]
-}));
 
 // Export your express server so you can import it in the lambda function.
 module.exports = app
