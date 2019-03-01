@@ -20,18 +20,18 @@ router.use( bodyParser.urlencoded({ extended: true }) );
 router.use( awsMiddleware.eventContext() );
 
 // servic static assets
-app.use(express.static('public'))
+app.use( express.static( 'public' ));
 
+// auth validation
 auth.validateAuthToken( app );
 
-// Image server
+// image server
 router.get( '/api/images/:filename', ( req, res ) => {
   res.sendFile( `${__dirname}/images/${req.params.filename}` )
 })
 
-// API routes
+// API routing
 app.use( require('./api')( router ));
-
 
 // Export your express server so you can import it in the lambda function.
 module.exports = app
