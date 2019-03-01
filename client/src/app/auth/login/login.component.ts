@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   email:    string = 'demo@user.com';
   password: string = 'password';
+  error:    string;
 
   constructor( private api: ApiService, private router: Router ) { }
 

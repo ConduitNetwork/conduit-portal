@@ -9,6 +9,7 @@ export class RegisterComponent implements OnInit {
   email:            string = '';
   password:         string = '';
   confirm_password: string = '';
+  error:            string;
 
   constructor() { }
 
