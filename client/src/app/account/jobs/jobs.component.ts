@@ -33,22 +33,26 @@ export class JobsComponent implements OnInit {
       this.api.get( `jobs/${id}` ).then(( job: Job ) => {
         this.job = job;
 
-        this.global.pageConfig.breadcrumbs.push( this.job.breadcrumb )
+        this.global.pageConfig.breadcrumbs.push( this.job.breadcrumb );
+
+        console.log(this.global.pageConfig.breadcrumbs)
 
         this.dataAvailable = true;
 
       }).catch( err => {
-        this.router.navigate(['/account/projects'])
+        this.router.navigate(['/account/projects']);
       })
     }
     else {
       this.api.get( `projects/${id}` ).then(( project: Project ) => {
         this.project = project;
 
-        this.getJob( true )
+        this.global.pageConfig.breadcrumbs = [ this.project.breadcrumb ];
+
+        this.getJob( true );
       })
       .catch( err => {
-        this.router.navigate(['/account/projects'])
+        this.router.navigate(['/account/projects']);
       })
     }
   }

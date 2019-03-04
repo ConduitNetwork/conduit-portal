@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 interface Breadcrumb {
   label:    string;
+  id:       string;
   routeUrl: string;
   description: string;
 }

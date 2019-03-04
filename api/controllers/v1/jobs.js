@@ -11,7 +11,8 @@ module.exports = ( router ) => {
       uuid:        req.params.id,
       starttime:   Date.now(),
       breadcrumb: {
-        label:       req.params.id.trim().replace(' ', '-').toLowerCase(),
+        label:       `job ${req.params.id}`,
+        id:          req.params.id,
         routeUrl:    req.path,
         description: `job ${req.params.id}`
       },

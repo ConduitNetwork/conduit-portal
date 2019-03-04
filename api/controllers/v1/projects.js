@@ -14,7 +14,13 @@ module.exports = ( router ) => {
       name:        "TensorFlow Example",
       label:       "TensorFlow Example".trim().replace(' ', '-').toLowerCase(),
       routeUrl:    req.path,
-      description: "A basic demo of how to run TensorFlow code"
+      description: "A basic demo of how to run TensorFlow code",
+      breadcrumb: {
+        label:       "TensorFlow Example".trim().replace(' ', '-').toLowerCase(),
+        id:          req.params.id,
+        routeUrl:    req.path,
+        description: "A basic demo of how to run TensorFlow code"
+      }
     }
     res.status( 200 ).json( project );
   })

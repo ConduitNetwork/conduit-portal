@@ -31,7 +31,7 @@ export class ProjectDetailsComponent implements OnInit {
   getProject( id ) {
     this.api.get( `projects/${id}` ).then(( project: Project ) => {
       this.project = project;
-      this.global.pageConfig.breadcrumbs.push( this.project )
+      this.global.pageConfig.breadcrumbs.push( this.project.breadcrumb )
 
       this.dataAvailable = true;
     })

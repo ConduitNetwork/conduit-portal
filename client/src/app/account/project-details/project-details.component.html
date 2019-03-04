@@ -202,9 +202,9 @@
           <fa-icon [icon]="acc.isExpanded('jobs') ? 'chevron-up' : 'chevron-down'"></fa-icon>
           Jobs
         </span>
-        <div class="form-group form-inline">
+        <!-- <div class="form-group form-inline">
           <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="jobSearch"/>
-        </div>
+        </div> -->
       </ng-template>
       <ng-template ngbPanelContent>
         <form>
@@ -217,12 +217,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let job of jobs" [routerLink]="['./jobs', '12345']">
+            <tr *ngFor="let job of jobs" [routerLink]="['./jobs', job.uuid]">
               <td>
-                <ngb-highlight [result]="job.status" [term]="jobSearch"></ngb-highlight>
+                <ngb-highlight [result]="'running'" [term]="jobSearch"></ngb-highlight>
               </td>
               <td>
-                <ngb-highlight [result]="job.id" [term]="jobSearch"></ngb-highlight>
+                <ngb-highlight [result]="job.uuid" [term]="jobSearch"></ngb-highlight>
               </td>
               <td>
                 <ngb-highlight [result]="job.starttime" [term]="jobSearch"></ngb-highlight>
