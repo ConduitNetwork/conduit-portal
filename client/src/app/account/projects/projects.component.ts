@@ -9,7 +9,7 @@ import { GlobalService } from '../../services/global.service';
 })
 export class ProjectsComponent implements OnInit {
   projectFilter: any = { name: '' }
-  newProject: any;
+  newProject: any = {};
   projects: any = [];
 
   constructor(
@@ -23,8 +23,11 @@ export class ProjectsComponent implements OnInit {
 
   createProject( content ) {
     // clear newProject values
-    this.newProject = {};
-    this.modalService.open(content, {
+    this.newProject = {
+      name: "TensorFlow Example",
+      description: "A basic demo of how to run TensorFlow code"
+    };
+    this.modalService.open( content, {
       keyboard: false,
       backdrop: 'static',
       centered: true,
@@ -32,11 +35,9 @@ export class ProjectsComponent implements OnInit {
         return confirm('Are you sure you want to close without saving this?');
       }
     }).result.then( saved => {
-      this.projects.push({
-        name: "TensorFlow Example",
-        description: "A basic demo of how to run TensorFlow code"
-      })
-      console.log(this.newProject)
+      this.projects.push( this.newProject )
+
+      console.log( this.newProject )
     }, ( closed ) => {
 
     });

@@ -13,6 +13,7 @@ export interface ProjectVariables {
 
 // Project
 export interface Project {
+  breadcrumb:  any;
   uuid:        string;
   name:        string;
   label:       string;

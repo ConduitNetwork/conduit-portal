@@ -1,0 +1,100 @@
+
+#particles {
+  position: absolute;
+  top: -50px;
+  bottom: -50px;
+  left: -50px;
+  right: -50px;
+  opacity: 1;
+}
+
+.first-section {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  // background-image: url('/assets/images/pattern3.png');
+  // background-size: cover;
+
+  & .node-network {
+    opacity: 0.8;
+    width: 600px;
+    height: 600px;
+    margin-top: 0px;
+    position: relative;
+    right: -0px;
+    -webkit-animation: rotation 200s infinite linear;
+  }
+
+
+  .info {
+    border: none;
+    margin: 100px 0 0 0;
+    background: transparent;
+    color: white;
+    & h1 {
+      font-size: 48px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    & h2 {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    & p {
+      font-size: 20px;
+      opacity: 1;
+    }
+    a.btn {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 36px;
+    }
+  }
+}
+
+.second-section {
+  min-height: 100px;
+
+  & .card.shadow {
+    white-space: nowrap;
+  }
+
+  & img {
+    width: 130px;
+  }
+}
+
+.third-section {
+  background: #000;
+  // background: #000 url('/assets/images/particles.png') 50% 50% no-repeat;
+  background-size: cover;
+
+  & .card {
+    background: rgba(255, 255, 255, 1);
+    // border: 2px solid white;
+  }
+
+  & img {
+    width: 180px;
+  }
+}
+
+.fourth-section {
+  & #subscribe {
+    max-width: 500px;
+    margin: auto;
+
+    & .form-control {
+      border-color: white;
+    }
+  }
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}

@@ -4,6 +4,7 @@ $font-family-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", 
 
 $primary: #ff7315;
 $primary-dark: #bc5510;
-$primary-gradient: linear-gradient($primary 24%, $primary-dark 400%);
+$primary-gradient: linear-gradient(87deg, $primary 0, #fbb140 100%);
+// $primary-gradient: linear-gradient($primary 24%, $primary-dark 400%);
 
 $border-radius: 3px;

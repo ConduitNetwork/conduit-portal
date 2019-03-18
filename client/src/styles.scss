@@ -130,7 +130,15 @@ input {
 // navbar customizations
 .bg-dark {
   background: #000!important;
+  border-color: #000;
 }
+
+.navbar-dark, .navbar-white {
+  & .nav-item {
+    line-height: 40px;
+  }
+}
+
 .navbar-dark {
   & .nav-item {
     & .dropdown-menu.show {
@@ -140,7 +148,6 @@ input {
     }
     & .nav-link {
       color: white;
-      line-height: 40px;
       margin-left: 15px;
       &:focus, &:hover {
         color: white;
@@ -156,9 +163,44 @@ input {
   }
 }
 
+.bg-primary-gradient {
+  background: $primary-gradient !important;
+}
 
 .page-placeholder {
   text-align: center;
   min-height: 500px;
   line-height: 500px;
+}
+
+.shadow {
+  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
+}
+
+.card {
+  border: none;
+}
+
+.btn.btn-round {
+  border-radius: 30px;
+}
+
+.btn-dark {
+  background: #000;
+  border-color: #000;
+}
+
+.text-muted {
+  color: #888!important;
+}
+
+.compact {
+  max-width: 750px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.bottom-border {
+  padding-bottom: 20px;
+  border-bottom: 5px solid $primary;
 }
