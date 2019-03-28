@@ -12,6 +12,8 @@ import { ResetComponent } from './auth/reset/reset.component';
 import { ProjectsComponent } from './account/projects/projects.component';
 import { ProjectDetailsComponent } from './account/project-details/project-details.component';
 import { JobsComponent } from './account/jobs/jobs.component';
+import { CompanyComponent } from './pages/company/company.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent
+  },
+  {
+    path: 'company/:tab',
+    component: CompanyComponent
+  },
+  {
+    path: 'products/:tab',
+    component: ProductsComponent
   },
   {
     path: 'auth',
@@ -78,7 +88,9 @@ export const COMPONENTS = [
   ResetComponent,
   ProjectDetailsComponent,
   LogoutComponent,
-  JobsComponent
+  JobsComponent,
+  CompanyComponent,
+  ProductsComponent
 ]
 
 @NgModule({

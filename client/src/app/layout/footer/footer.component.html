@@ -14,25 +14,26 @@
       <div class="col-6 col-md">
         <h5>Company</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">About</a></li>
-          <li><a class="text-muted" href="#">Careers</a></li>
-          <li><a class="text-muted" href="#">Press</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" [routerLink]="['company', 'about']">About</a></li>
+          <li><a class="text-muted" [routerLink]="['company', 'careers']">Careers</a></li>
+          <li><a class="text-muted" [routerLink]="['company', 'press']">Press</a></li>
+          <li><a class="text-muted" [routerLink]="['company', 'privacy']">Team</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
         <h5>Products</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">OpenConduit</a></li>
-          <li><a class="text-muted" href="#">ProConduit</a></li>
-          <li><a class="text-muted" href="#">ProEdge</a></li>
-          <li><a class="text-muted" href="#">SuperConduit</a></li>
+          <li><a class="text-muted" [routerLink]="['products', 'openconduit']">OpenConduit</a></li>
+          <li><a class="text-muted" [routerLink]="['products', 'proconduit']">ProConduit</a></li>
+          <li><a class="text-muted" [routerLink]="['products', 'proedge']">ProEdge</a></li>
+          <li><a class="text-muted" [routerLink]="['products', 'superconduit']">SuperConduit</a></li>
+          <li><a class="text-muted" [routerLink]="['products', 'superedge']">SuperEdge</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
         <h5>Social</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Facebook</a></li>
+          <li><a class="text-muted" href="https://www.facebook.com/conduit" target="_blank">Facebook</a></li>
           <li><a class="text-muted" href="#">Twitter</a></li>
           <li><a class="text-muted" href="#">Blog</a></li>
           <li><a class="text-muted" href="#"></a></li>
@@ -41,9 +42,9 @@
       <div class="col-6 col-md contribute">
         <h5>Contribute</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Open Source</a></li>
-          <li><a class="text-muted" href="#">Suggestions</a></li>
-          <li><a class="text-muted" href="#">Bug Reports</a></li>
+          <li><a class="text-muted" href="https://github.com/conduitnetwork" target="_blank">Open Source</a></li>
+          <li><a class="text-muted" href="mailto:feedback@conduitcomputing.com?subject=I have a suggestion">Suggestions</a></li>
+          <li><a class="text-muted" href="mailto:feedback@conduitcomputing.com?subject=I'd like to report a bug">Bug Reports</a></li>
         </ul>
       </div>
     </div>

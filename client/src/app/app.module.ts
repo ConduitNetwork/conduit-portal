@@ -19,6 +19,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.component';
 
 import { JwtModule } from '@auth0/angular-jwt';
+import { AboutComponent } from './pages/company/about/about.component';
+import { PressComponent } from './pages/company/press/press.component';
+import { CareersComponent } from './pages/company/careers/careers.component';
+import { TeamComponent } from './pages/company/team/team.component';
 
 
 export function tokenGetter() {
@@ -33,7 +37,11 @@ export function tokenGetter() {
     AccountNavbarComponent,
     FooterComponent,
     BreadcrumbsComponent,
-    ...COMPONENTS
+    ...COMPONENTS,
+    AboutComponent,
+    PressComponent,
+    CareersComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
