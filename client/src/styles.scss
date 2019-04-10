@@ -167,6 +167,13 @@ input {
   background: $primary-gradient !important;
 }
 
+.text-primary-gradient {
+  color: $primary;
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .page-placeholder {
   text-align: center;
   min-height: 500px;
@@ -175,6 +182,9 @@ input {
 
 .shadow {
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
+}
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
 
 .card {

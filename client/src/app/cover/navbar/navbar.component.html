@@ -4,14 +4,11 @@
       <img src="assets/conduit/logo_transparent.png">
     </a>
     <ul class="navbar-nav ml-auto">
-      <!-- <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]="['/auth/login']">Products</a>
+      <li class="nav-item" *ngIf="!router.url.includes('company')">
+        <a class="nav-link text-dark" [routerLink]="['/company']">Company</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]="['/auth/login']">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]="['/auth/login']">Products</a>
+      <!-- <li class="nav-item" *ngIf="router.url.includes('company')">
+        <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
       </li> -->
       <li class="nav-item ml-4">
         <a href="https://openconduit.cloud" target="_blank" class="btn btn-round btn-primary mt-2 mb-2 pr-3 pl-3">OpenConduit Portal</a>

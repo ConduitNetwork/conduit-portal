@@ -1,3 +1,17 @@
-<p>
-  team works!
-</p>
+
+<!-- page title -->
+<h1 class="text-primary-gradient mb-4">Meet our Team</h1>
+
+<!-- articles -->
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let member of team">
+    <div class="card">
+      <div class="card-img-top shadow-lg" [ngStyle]="{'background-image': 'url('+ member.imageUrl +')'}"></div>
+      <div class="card-body">
+        <!-- <small class="text-muted">{{article.source}}</small> -->
+        <h5 class="card-title mt-2">{{member.name || 'Someone'}}</h5>
+        <p class="card-text text-muted mt-2">{{member.title || 'Title'}}</p>
+      </div>
+    </div>
+  </div>
+</div>

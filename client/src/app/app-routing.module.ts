@@ -14,6 +14,10 @@ import { ProjectDetailsComponent } from './account/project-details/project-detai
 import { JobsComponent } from './account/jobs/jobs.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { AboutComponent } from './pages/company/about/about.component';
+import { PressComponent } from './pages/company/press/press.component';
+import { CareersComponent } from './pages/company/careers/careers.component';
+import { TeamComponent } from './pages/company/team/team.component';
 
 const routes: Routes = [
   {
@@ -25,8 +29,27 @@ const routes: Routes = [
     component: LogoutComponent
   },
   {
-    path: 'company/:tab',
-    component: CompanyComponent
+    path: 'company',
+    component: CompanyComponent,
+    children: [
+      { path: '', redirectTo: 'about', pathMatch: 'full' },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'press',
+        component: PressComponent
+      },
+      {
+        path: 'careers',
+        component: CareersComponent
+      },
+      {
+        path: 'team',
+        component: TeamComponent
+      }
+    ]
   },
   {
     path: 'products/:tab',
@@ -90,7 +113,11 @@ export const COMPONENTS = [
   LogoutComponent,
   JobsComponent,
   CompanyComponent,
-  ProductsComponent
+  ProductsComponent,
+  AboutComponent,
+  PressComponent,
+  CareersComponent,
+  TeamComponent
 ]
 
 @NgModule({

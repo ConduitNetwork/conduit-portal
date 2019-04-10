@@ -19,10 +19,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.component';
 
 import { JwtModule } from '@auth0/angular-jwt';
-import { AboutComponent } from './pages/company/about/about.component';
-import { PressComponent } from './pages/company/press/press.component';
-import { CareersComponent } from './pages/company/careers/careers.component';
-import { TeamComponent } from './pages/company/team/team.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 
 export function tokenGetter() {
@@ -38,10 +35,7 @@ export function tokenGetter() {
     FooterComponent,
     BreadcrumbsComponent,
     ...COMPONENTS,
-    AboutComponent,
-    PressComponent,
-    CareersComponent,
-    TeamComponent
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,

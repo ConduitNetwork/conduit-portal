@@ -1,3 +1,16 @@
-<p>
-  press works!
-</p>
+
+<!-- page title -->
+<h1 class="text-primary-gradient mb-4">Conduit Press</h1>
+
+<!-- articles -->
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let article of articles">
+    <div class="card shadow" (click)="href(article.url)">
+      <div class="card-img-top" [ngStyle]="{'background-image': 'url('+ article.imageUrl +')'}"></div>
+      <div class="card-body">
+        <small class="text-muted">{{article.source}}</small>
+        <p class="card-text mt-2">{{article.title}}</p>
+      </div>
+    </div>
+  </div>
+</div>

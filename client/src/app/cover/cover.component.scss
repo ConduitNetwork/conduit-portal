@@ -79,17 +79,6 @@
   }
 }
 
-.fourth-section {
-  & #subscribe {
-    max-width: 500px;
-    margin: auto;
-
-    & .form-control {
-      border-color: white;
-    }
-  }
-}
-
 @-webkit-keyframes rotation {
 	from {
 		-webkit-transform: rotate(0deg);

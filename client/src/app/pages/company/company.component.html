@@ -1,31 +1,23 @@
-<!-- Navbar -->
+<!-- main navbar -->
 <cover-navbar></cover-navbar>
 
-<div class="container">
-  <ngb-tabset type="pills" [orientation]="'vertical'">
+<!-- company nav -->
+<nav class="navbar navbar-expand navbar-white mt-3">
+  <div class="container pl-2 pr-2">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngFor="let route of routes">
+        <a class="nav-link" [routerLink]="route.path" routerLinkActive="active">{{route.label}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <ngb-tab title="About">
-      <ng-template ngbTabContent>
-        <app-about></app-about>
-      </ng-template>
-    </ngb-tab>
-
-    <ngb-tab title="Press">
-      <ng-template ngbTabContent>
-        <app-press></app-press>
-      </ng-template>
-    </ngb-tab>
-
-    <ngb-tab title="Careers">
-      <ng-template ngbTabContent>
-        <app-press></app-press>
-      </ng-template>
-    </ngb-tab>
-
-    <ngb-tab title="Team">
-      <ng-template ngbTabContent>
-        <app-team></app-team>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+<!-- company pages -->
+<div class="company-page">
+  <div class="container pt-4">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+<!-- subscribe -->
+<app-subscribe></app-subscribe>

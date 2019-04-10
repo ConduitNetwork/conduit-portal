@@ -1,0 +1,14 @@
+<div class="bg-primary-gradient p-5">
+  <div class="container text-center py-5">
+    <div id="subscribe">
+      <h1 class="text-white">Join the Collective</h1>
+      <h5 class="text-white mt-2 mb-4">Stay connected by subscribing to our newsletter (we'll never share your email with anyone else)</h5>
+      <form (submit)="subscribe()">
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email">
+        </div>
+        <button type="submit" class="btn btn-dark btn-block btn-lg shadow">SUBSCRIBE</button>
+      </form>
+    </div>
+  </div>
+</div>

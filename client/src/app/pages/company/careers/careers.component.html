@@ -1,3 +1,97 @@
-<p>
-  careers works!
-</p>
+
+<!-- page title -->
+<h1 class="text-primary-gradient mb-4">Conduit Careers</h1>
+
+<h3>Engineering</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.engineering">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Business Strategy</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.business">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Sales & Support</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.sales">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Design</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.design">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Marketing & PR</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.marketing">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Finance</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.finance">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Legal</h3>
+<div class="row">
+  <div class="col-12 col-md-6" *ngFor="let job of jobs.legal">
+    <div class="card shadow" (click)="mail(job.title)">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.summary}}</p>
+        <small class="text-muted">{{job.location}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
