@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subscribe.component.scss']
 })
 export class SubscribeComponent implements OnInit {
+  email: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  subscribe() {
+    alert('Try again later')
   }
 
 }

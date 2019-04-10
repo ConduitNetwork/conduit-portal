@@ -8,16 +8,11 @@ declare var particlesJS: any;
   styleUrls: ['./cover.component.scss']
 })
 export class CoverComponent implements OnInit {
-  email: string;
 
   constructor() { }
 
   ngOnInit() {
     particlesJS.load('particles', '/assets/data/particlesjs-config.json', null);
-  }
-
-  subscribe() {
-    alert('Try again later')
   }
 
 }
