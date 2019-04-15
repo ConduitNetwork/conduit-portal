@@ -8,8 +8,80 @@ import { Component, OnInit } from '@angular/core';
 export class TeamComponent implements OnInit {
   public team: any = [
     {
-      name: 'Cristina Dolan',
-      imageUrl: 'https://res.cloudinary.com/conduitllc/image/upload/v1525784048/advisor/Cristina%20Dolan/main.jpg',
+      name: 'Ryan Robinson',
+      imageUrl: '/assets/images/team/ryan.jpg',
+      title: 'CEO',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Ricky Brown',
+      imageUrl: '/assets/images/team/ricky.jpg',
+      title: 'CTO',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Taylor Caforio',
+      imageUrl: '/assets/images/team/taylor.jpg',
+      title: 'Vice President',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Matt Meyer',
+      imageUrl: '/assets/images/team/matt.jpg',
+      title: 'Head of Community',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Shafan Sugarman',
+      imageUrl: '/assets/images/team/shafan.jpg',
+      title: 'Sales Engineer',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Ebonique Stepney',
+      imageUrl: '/assets/images/team/eb.jpg',
+      title: 'Executive Assistant',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Steve Davis',
+      imageUrl: '/assets/images/team/steve.jpg',
+      title: 'Senior Advisor',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Erik Martin',
+      imageUrl: '/assets/images/team/erik.png',
+      title: 'Community Advisor',
+      blurb: '',
+      links: [
+
+      ]
+    },
+    {
+      name: 'Carsten Stocker',
+      imageUrl: '/assets/images/team/carsten.png',
       title: 'Advisor',
       blurb: '',
       links: [
@@ -17,99 +89,27 @@ export class TeamComponent implements OnInit {
       ]
     },
     {
-      name: '',
-      imageUrl: '',
-      title: '',
+      name: 'Cristina Dolan',
+      imageUrl: '/assets/images/team/cristina.jpg',
+      title: 'Advisor',
       blurb: '',
       links: [
 
       ]
     },
     {
-      name: '',
-      imageUrl: '',
-      title: '',
+      name: 'Stuart Prior',
+      imageUrl: '/assets/images/team/stuart.jpg',
+      title: 'Advisor',
       blurb: '',
       links: [
 
       ]
     },
     {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
-      blurb: '',
-      links: [
-
-      ]
-    },
-    {
-      name: '',
-      imageUrl: '',
-      title: '',
+      name: 'Yin Nawaday',
+      imageUrl: '/assets/images/team/yin.jpg',
+      title: 'Community Advisor',
       blurb: '',
       links: [
 
