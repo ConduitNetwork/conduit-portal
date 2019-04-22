@@ -18,6 +18,7 @@ import { AboutComponent } from './pages/company/about/about.component';
 import { PressComponent } from './pages/company/press/press.component';
 import { CareersComponent } from './pages/company/careers/careers.component';
 import { TeamComponent } from './pages/company/team/team.component';
+import { DocsComponent } from './pages/docs/docs.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,15 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'products/:tab',
+    path: 'docs',
+    component: DocsComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
+  },
+  {
+    path: 'products/:product',
     component: ProductsComponent
   },
   {
@@ -117,7 +126,8 @@ export const COMPONENTS = [
   AboutComponent,
   PressComponent,
   CareersComponent,
-  TeamComponent
+  TeamComponent,
+  DocsComponent
 ]
 
 @NgModule({

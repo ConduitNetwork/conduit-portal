@@ -34,8 +34,8 @@ export function tokenGetter() {
     AccountNavbarComponent,
     FooterComponent,
     BreadcrumbsComponent,
-    ...COMPONENTS,
-    SubscribeComponent
+    SubscribeComponent,
+    ...COMPONENTS
   ],
   imports: [
     BrowserModule,
