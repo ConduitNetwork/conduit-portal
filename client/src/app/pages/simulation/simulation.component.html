@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <div class="container-fluid pl-3 pr-2">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="assets/conduit/logo_orange.jpg">
+    </a>
+  </div>
+</nav>
+
+<div class="container-fluid wall bg-primary" (nodeCountChange)="nodeCountChangeHandler($event)">
+  <app-configurator></app-configurator>
+
+  <app-node *ngFor="let node of [].constructor(nodeCount)"></app-node>
+</div>

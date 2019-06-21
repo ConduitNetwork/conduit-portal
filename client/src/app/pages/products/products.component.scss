@@ -13,3 +13,45 @@
     }
   }
 }
+
+.page-container {
+  position: relative;
+  padding: 50px 0;
+
+  & .bg {
+    height: 500px;;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.card {
+  cursor: pointer;
+  & .card-body {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    & img {
+      width: 50%;
+    }
+    & h5 {
+      color: #444;
+    }
+  }
+  &.gray {
+    background: #eee;
+    border-radius: 35px;
+  }
+}
+
+.card-connector {
+  position: absolute;
+  width: 40px;
+  height: 51px;
+  left: calc(50% - 20px);
+  z-index: 10;
+  background: #f7f7f7;
+  background: linear-gradient(0deg, #eee 0%, #fff 100%);
+}

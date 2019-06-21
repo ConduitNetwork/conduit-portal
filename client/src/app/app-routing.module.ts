@@ -19,6 +19,7 @@ import { PressComponent } from './pages/company/press/press.component';
 import { CareersComponent } from './pages/company/careers/careers.component';
 import { TeamComponent } from './pages/company/team/team.component';
 import { DocsComponent } from './pages/docs/docs.component';
+import { SimulationComponent } from './pages/simulation/simulation.component';
 
 const routes: Routes = [
   {
@@ -107,7 +108,14 @@ const routes: Routes = [
         component: JobsComponent
       }
     ]
-  }
+  },
+  {
+    path: 'simulate',
+    component: SimulationComponent
+  },
+  { path: 'simulations', redirectTo: 'simulate', pathMatch: 'full' },
+  { path: 'simulation', redirectTo: 'simulate', pathMatch: 'full' },
+  { path: 'simulator', redirectTo: 'simulate', pathMatch: 'full' }
 ];
 
 export const COMPONENTS = [
@@ -127,7 +135,8 @@ export const COMPONENTS = [
   PressComponent,
   CareersComponent,
   TeamComponent,
-  DocsComponent
+  DocsComponent,
+  SimulationComponent
 ]
 
 @NgModule({

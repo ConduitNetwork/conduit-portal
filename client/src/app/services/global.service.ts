@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Breadcrumb {
-  label:    string;
-  id:       string;
-  routeUrl: string;
+  label:       string;
+  id:          string;
+  routeUrl:    string;
   description: string;
 }
 
@@ -35,7 +36,7 @@ export class GlobalService {
     breadcrumbs: []
   };
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
   get pageConfig() {
     return this._pageConfig;
@@ -43,6 +44,15 @@ export class GlobalService {
 
   set pageConfig(config) {
     this._pageConfig = config;
+  }
+
+  public href( url, blank = false, enabled = true ) {
+    if( enabled ) {
+      blank ? window.open( url, '_blank' ) : window.open( url );
+    }
+    else {
+      return;
+    }
   }
 
 }

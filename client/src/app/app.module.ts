@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 import { AppRoutingModule, COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { BreadcrumbsComponent } from './account/breadcrumbs/breadcrumbs.componen
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { NodeComponent } from './pages/simulation/elements/node/node.component';
+import { WorkloadComponent } from './pages/simulation/elements/workload/workload.component';
+import { ConfiguratorComponent } from './pages/simulation/configurator/configurator.component';
 
 
 export function tokenGetter() {
@@ -35,7 +39,10 @@ export function tokenGetter() {
     FooterComponent,
     BreadcrumbsComponent,
     SubscribeComponent,
-    ...COMPONENTS
+    ...COMPONENTS,
+    NodeComponent,
+    WorkloadComponent,
+    ConfiguratorComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ export function tokenGetter() {
     HttpClientModule,
     FilterPipeModule,
     NgxBootstrapSliderModule,
+    AngularDraggableModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

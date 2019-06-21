@@ -1,27 +1,37 @@
 [
   {
-    "name": "OpenConduit&trade;",
+    "name": "OpenConduit",
     "url": "openconduit",
-    "description": ""
+    "docs": "https://docs.openconduit.cloud",
+    "description": "Hybrid Cloud Management",
+    "fulldescription": "Designed for High Compute-purpose GPU’s used in conjunction to provide near supercomputer output capabilities. Ideally suited for: Analytics, AI, large modelling, rendering, graphics and designs, Machine learning, high performance databases, computational fluid dynamics, larger molecular modelling, genomics, rendering, and other server-side workloads requiring massive parallel floating point processing power",
+    "companion": {
+      "name": "Flexible Hosting",
+      "url": "managedservice",
+      "description": "Private or Managed Service",
+      "detached": false
+    }
   },
   {
-    "name": "ProConduit&trade;",
+    "name": "ProConduit",
     "url": "proconduit",
-    "description": ""
+    "description": "The Conduit Network",
+    "companion": {
+      "name": "ProEdge",
+      "url": "proedge",
+      "description": "Resource Management Controller",
+      "detached": true
+    }
   },
   {
-    "name": "ProEdge&trade;",
-    "url": "proedge",
-    "description": ""
-  },
-  {
-    "name": "SuperConduit&trade;",
+    "name": "SuperConduit",
     "url": "superconduit",
-    "description": ""
-  },
-  {
-    "name": "SuperEdge&trade;",
-    "url": "superedge",
-    "description": ""
+    "description": "The Conduit Network",
+    "companion": {
+      "name": "SuperEdge",
+      "url": "superedge",
+      "description": "Resource Management Controller",
+      "detached": true
+    }
   }
 ]

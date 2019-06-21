@@ -1,24 +1,36 @@
 <!-- Navbar -->
 <cover-navbar></cover-navbar>
 
+<div *ngIf="!product" class="page-container">
+  <div class="bg bg-primary-gradient"></div>
+  <div class="container pt-5">
+    <!-- page title -->
 
-<div *ngIf="!product" class="container">
-  <!-- page title -->
-  <h1 class="text-primary-gradient mb-4">Products</h1>
+    <h1 class="text-center mt-4 mb-5">
+      <span class="text-primary-gradient">Conduit Product Family</span>
+    </h1>
 
-  <!-- products -->
-  <div class="row">
-    <div class="col-12 col-md-3" *ngFor="let product of products">
-      <div class="card shadow mt-4">
-        <div class="card-body">
-          <img class="pro-c float-right" src="/assets/conduit/proconduit.png">
-          <h5 class="font-weight-bold mt-3" [innerHtml]="product.name"></h5>
-          <p class="text-muted" [innerHtml]="product.description"></p>
+    <!-- products -->
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let product of products">
+        <div class="card shadow mt-4" [routerLink]="['/products/'+product.url]">
+          <div class="card-body">
+            <img src="/assets/conduit/{{product.url}}.png">
+            <h5 class="font-weight-bold mt-3" [innerHtml]="product.name"></h5>
+            <p class="text-muted" [innerHtml]="product.description"></p>
+          </div>
+        </div>
+        <div class="card-connector"></div>
+        <div class="card gray shadow-sm mt-5 mb-5" [routerLink]="['/products/'+product.url]">
+          <div class="card-body">
+            <img src="/assets/conduit/{{product.companion.url}}.png">
+            <h5 class="font-weight-bold mt-3" [innerHtml]="product.companion.name"></h5>
+            <p class="text-muted" [innerHtml]="product.companion.description"></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
 
@@ -36,10 +48,16 @@
   </div>
 </nav>
 
-<div *ngIf="product" class="container">
+<div *ngIf="product" class="container pt-4">
   <!-- page title -->
-  <h1 class="text-primary-gradient mb-4" [innerHtml]="product.name"></h1>
+  <h1 class="mb-4">
+    <span class="text-primary-gradient" [innerHtml]="product.name"></span>
+  </h1>
 
   <!-- articles -->
-
+  <div class="card">
+    <div class="card-body">
+      <!-- <p class="card-text">{{product.fulldescription}}</p> -->
+    </div>
+  </div>
 </div>

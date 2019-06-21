@@ -1,0 +1,38 @@
+.page-container {
+  padding: 98px 0;
+}
+
+.docs.bg-dark {
+  padding: 50px 0 10px 0;
+  background-image: url(/assets/images/dark-pattern.png)!important;
+}
+
+.card {
+  user-select: none;
+  cursor: pointer;
+  margin: 15px 0;
+  // background: #fff url('/assets/images/squares.png') right no-repeat;
+  // background-size: 40%;
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+    background-color: #ddd;
+    //
+    // & img {
+    //   opacity: 0.5;
+    // }
+  }
+
+  & img {
+    height: 100px;
+    margin-right: 15px;
+  }
+  & h3 {
+    color: #333;
+    margin: 20px 0 0 0;
+    // position: relative;
+    // top: 30px;
+    // left: 10px;
+  }
+}

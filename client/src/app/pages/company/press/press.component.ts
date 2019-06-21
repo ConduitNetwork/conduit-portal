@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../../../services/global.service';
 
 @Component({
   selector: 'app-press',
@@ -33,13 +34,9 @@ export class PressComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor( public global: GlobalService ) { }
 
   ngOnInit() {
-  }
-
-  public href( url ) {
-    window.open( url, '_blank' );
   }
 
 }

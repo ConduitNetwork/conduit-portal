@@ -5,7 +5,7 @@
 <!-- articles -->
 <div class="row">
   <div class="col-12 col-md-6 col-lg-4" *ngFor="let article of articles">
-    <div class="card shadow" (click)="href(article.url)">
+    <div class="card shadow" (click)="global.href(article.url, true)">
       <div class="card-img-top" [ngStyle]="{'background-image': 'url('+ article.imageUrl +')'}"></div>
       <div class="card-body">
         <small class="text-muted">{{article.source}}</small>

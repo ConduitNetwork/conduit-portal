@@ -1,0 +1,6 @@
+<div class="card" ngDraggable [handle]="handle">
+  <div #handle class="card-header"></div>
+  <div class="card-body">
+    <mv-slider [(value)]="nodeCount" [ticks]="[1,2,3,4]" (change)="changeNodeCount(nodeCount)"></mv-slider>
+  </div>
+</div>
