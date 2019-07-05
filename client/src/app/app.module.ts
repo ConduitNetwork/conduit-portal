@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './services/auth/auth.guard';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -54,6 +54,7 @@ export function tokenGetter() {
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     FilterPipeModule,
     NgxBootstrapSliderModule,
     AngularDraggableModule,
