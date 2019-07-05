@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../services/global.service';
 
 declare var particlesJS: any;
 
@@ -9,7 +10,7 @@ declare var particlesJS: any;
 })
 export class CoverComponent implements OnInit {
 
-  constructor() { }
+  constructor(public global: GlobalService) { }
 
   ngOnInit() {
     particlesJS.load('particles', '/assets/data/particlesjs-config.json', null);

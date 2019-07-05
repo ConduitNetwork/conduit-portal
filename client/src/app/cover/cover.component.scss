@@ -8,6 +8,19 @@
   opacity: 1;
 }
 
+.announcement {
+  position: absolute;
+  top:0; left:0; right:0;
+  height: 50px;
+  cursor: pointer;
+  background: black;
+  z-index: 10000;
+  line-height: 50px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
 .first-section {
   position: relative;
   height: 650px;
@@ -32,7 +45,7 @@
     background: transparent;
     color: white;
     & h1 {
-      font-size: 48px;
+      font-size: 40px;
       font-weight: bold;
       white-space: nowrap;
     }
