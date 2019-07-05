@@ -9,6 +9,12 @@ $slider-horizontal-width: 80% !default;
 
 @import '~bootstrap-slider/src/sass/bootstrap-slider.scss';
 
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .slider-selection.tick-slider-selection {
   background-color: black;
   background-image: none;

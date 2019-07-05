@@ -1,4 +1,6 @@
 <!-- Main Router Outlet -->
-<router-outlet></router-outlet>
+<main [@fadeAnimation]="getRouterOutletState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
 <!-- Global Footer -->
 <app-footer></app-footer>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeAnimation } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html',
-  styleUrls: ['./company.component.scss']
+  styleUrls: ['./company.component.scss'],
+  animations: [ fadeAnimation ]
 })
 export class CompanyComponent implements OnInit {
   public routes: any = [
@@ -28,6 +30,10 @@ export class CompanyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
 }

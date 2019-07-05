@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularDraggableModule } from 'angular2-draggable';
 
 import { AppRoutingModule, COMPONENTS } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './cover/navbar/navbar.component';
 import { AccountNavbarComponent } from './account/navbar/navbar.component';
@@ -58,6 +59,7 @@ export function tokenGetter() {
     FilterPipeModule,
     NgxBootstrapSliderModule,
     AngularDraggableModule,
+    BrowserAnimationsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
