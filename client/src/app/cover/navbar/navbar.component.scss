@@ -2,4 +2,11 @@
   > img {
     width: 150px;
   }
+  &.icon {
+    > img {
+      width: 40px;
+      position: relative;
+      left: -15px;
+    }
+  }
 }
