@@ -27,13 +27,15 @@
   position: absolute;
   top:0; left:0; right:0;
   height: 50px;
-  cursor: pointer;
   background: black;
   z-index: 10000;
   line-height: 50px;
   font-size: 18px;
   color: white;
   text-align: center;
+  & span {
+    cursor: pointer;
+  }
 }
 
 .first-section {

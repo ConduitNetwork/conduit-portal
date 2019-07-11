@@ -3,8 +3,15 @@
   <cover-navbar></cover-navbar>
 
   <div class="first-section bg-primary-gradient">
-    <div class="announcement" (click)="global.href('https://www.eventbrite.com/e/the-future-of-cloud-computing-tickets-60146343332', true)">
-      The Future of Cloud Computing Conference in Boston is coming up July 24th, Register here!
+    <div class="announcement">
+      The Future of Cloud Computing Conference in Boston is coming up July 24th,
+      <span (click)="global.href('https://www.eventbrite.com/e/the-future-of-cloud-computing-tickets-60146343332', true)">
+        <u>Register here!</u>
+      </span>
+      &nbsp;&nbsp;
+      <span (click)="global.href('https://conduit-files.s3-us-west-2.amazonaws.com/Conduit-PressRelease.pdf', true)">
+        <small><u>Press Release</u></small>
+      </span>
     </div>
     <div id="particles"></div>
     <div class="container">
