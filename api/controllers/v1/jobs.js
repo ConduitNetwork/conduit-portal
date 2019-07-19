@@ -1,5 +1,7 @@
 'use strict';
 
+const Supercloud = require( '../../../lib/supercloud' );
+
 module.exports = ( router ) => {
 
   router.get( '/jobs', ( req, res ) => {
@@ -34,6 +36,17 @@ module.exports = ( router ) => {
       ]
     }
     res.status( 200 ).json( job );
+  })
+
+
+  router.post( '/jobs', ( req, res) => {
+    Supercloud.run( req.body.job )
+    .then( data => {
+      res.status( 200 ).json({ message: 'job submitted' })
+    })
+    .catch( err => {
+      res.status( 400 ).json({ message: err || 'error submitting job' })
+    })
   })
 
   return router;
