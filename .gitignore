@@ -1,6 +1,8 @@
 lambda-invoke-response.json
 packaged-sam.yaml
 
+tmp/jobs/*
+
 .DS_Store
 
 # Logs
