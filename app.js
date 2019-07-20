@@ -13,11 +13,11 @@ const router        = express.Router();
 const auth          = require( './lib/auth' );
 const expressJwt    = require( 'express-jwt' );
 
-router.use( compression() );
-router.use( cors() );
-router.use( bodyParser.json() );
-router.use( bodyParser.urlencoded({ extended: true }) );
-router.use( awsMiddleware.eventContext() );
+app.use( compression() );
+app.use( cors() );
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({ extended: true }) );
+app.use( awsMiddleware.eventContext() );
 
 // servic static assets
 app.use( express.static( 'public' ));
