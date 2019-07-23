@@ -1,24 +1,52 @@
-<!-- <div *ngIf="dataAvailable">
-  <div class="project-header">
-    <div class="image">{{project.name[0]}}</div>
-    <div class="project-details">
-      <h2 class="mb-1">{{project.name}}</h2>
-      <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+<div *ngIf="dataAvailable">
+  <div class="row">
+    <div class="project-header col-10">
+      <div class="image">{{project.name[0]}}</div>
+      <div class="project-details">
+        <h2 class="mb-1">{{project.name}}</h2>
+        <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+      </div>
     </div>
-    <h4 class="job-count" [routerLink]="['../']" fragment="jobs">{{jobs.length}} Jobs</h4>
-  </div>
-
-  <div class="action-bar row">
-    <div class="col-9">
-      <button type="button" class="btn btn-sm btn-outline-dark p-7">finished</button>
-      <span>{{job.id}}</span>
-      <span>{{job.starttime}}</span>
-    </div>
-    <div class="col-3">
-      <button type="button" class="btn btn-block btn-lg btn-primary">VIEW RESULTS</button>
+    <div class="col-2">
+      <button type="button" (click)="runJob()" class="btn btn-block btn-primary mt-4">RUN JOB</button>
     </div>
   </div>
-</div> -->
 
+  <form>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col" sortable="status" (sort)="onSort($event)">Status</th>
+        <th scope="col" sortable="id" (sort)="onSort($event)">Job ID</th>
+        <th scope="col" sortable="starttime" (sort)="onSort($event)">Start Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let job of jobs" [routerLink]="[job.uuid]">
+        <td>
+          <ngb-highlight [result]="'running'" [term]="jobSearch"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="job.uuid" [term]="jobSearch"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="job.starttime" [term]="jobSearch"></ngb-highlight>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
-<div class="page-placeholder">[ Morpheus Integrated Dashboard ]</div>
+    <!-- <div class="d-flex justify-content-between p-2">
+      <ngb-pagination
+        [collectionSize]="jobs.length" [(page)]="service.page" [pageSize]="service.pageSize">
+      </ngb-pagination>
+
+      <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
+    </div> -->
+
+  </form>
+</div>

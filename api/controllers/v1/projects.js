@@ -1,28 +1,23 @@
 'use strict';
 
+let projects = [
+  {
+    uuid:        "1563897843461",
+    name:        "Classification of Iris Flowers",
+    description: "Classify iris flowers among three species (setosa, versicolor or virginica)"
+  }
+]
+
 module.exports = ( router ) => {
 
   // Get all projects
   router.get( '/projects', ( req, res ) => {
-    res.status( 200 ).json( [] );
+    res.status( 200 ).json( projects );
   })
 
   // Get a project by id
   router.get( '/projects/:id', ( req, res ) => {
-    const project = {
-      uuid:        "123456789",
-      name:        "TensorFlow Example",
-      label:       "TensorFlow Example".trim().replace(' ', '-').toLowerCase(),
-      routeUrl:    req.path,
-      description: "A basic demo of how to run TensorFlow code",
-      breadcrumb: {
-        label:       "TensorFlow Example".trim().replace(' ', '-').toLowerCase(),
-        id:          req.params.id,
-        routeUrl:    req.path,
-        description: "A basic demo of how to run TensorFlow code"
-      }
-    }
-    res.status( 200 ).json( project );
+    res.status( 200 ).json( projects.find(p => { return p.uuid === req.params.id }));
   })
 
   // Get all jobs of a project

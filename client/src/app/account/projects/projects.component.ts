@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { GlobalService } from '../../services/global.service';
+import { ApiService } from '../../services/api/api.service';
+import { Project, Job } from '../../app.interfaces';
 
 @Component({
   selector: 'app-projects',
@@ -8,17 +10,30 @@ import { GlobalService } from '../../services/global.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  projectFilter: any = { name: '' }
+  projectFilter: any = {};
   newProject: any = {};
   projects: any = [];
 
+  dataAvailable: boolean = false;
+
   constructor(
     private modalService: NgbModal,
+    private api: ApiService,
     public global: GlobalService
   ) { }
 
   ngOnInit() {
     this.global.pageConfig.breadcrumbs = [];
+
+    this.getProjects()
+  }
+
+  getProjects() {
+    this.api.get( `projects` ).then(( projects: Project[] ) => {
+      this.projects = projects;
+
+      this.dataAvailable = true;
+    })
   }
 
   createProject( content ) {

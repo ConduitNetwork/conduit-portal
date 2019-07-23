@@ -12,6 +12,7 @@ import { ResetComponent } from './auth/reset/reset.component';
 import { ProjectsComponent } from './account/projects/projects.component';
 import { ProjectDetailsComponent } from './account/project-details/project-details.component';
 import { JobsComponent } from './account/jobs/jobs.component';
+import { JobDetailsComponent } from './account/job-details/job-details.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AboutComponent } from './pages/company/about/about.component';
@@ -104,8 +105,12 @@ const routes: Routes = [
         component: ProjectDetailsComponent
       },
       {
-        path: 'projects/:id/jobs/:jobId',
+        path: 'projects/:id/jobs',
         component: JobsComponent
+      },
+      {
+        path: 'projects/:id/jobs/:jobId',
+        component: JobDetailsComponent
       }
     ]
   },
@@ -129,6 +134,7 @@ export const COMPONENTS = [
   ProjectDetailsComponent,
   LogoutComponent,
   JobsComponent,
+  JobDetailsComponent,
   CompanyComponent,
   ProductsComponent,
   AboutComponent,

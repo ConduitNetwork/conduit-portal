@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router'
 import { GlobalService } from '../../services/global.service';
 import { ApiService } from '../../services/api/api.service';
 import { Project, Job } from '../../app.interfaces';
+import { ProjectService } from '../../services/project/project.service';
 
 @Component({
   selector: 'app-project-details',
@@ -18,6 +19,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   constructor(
     public global: GlobalService,
+    private projectService: ProjectService,
     private api: ApiService,
     private router: Router,
     private activeRoute: ActivatedRoute
@@ -29,9 +31,11 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   getProject( id ) {
-    this.api.get( `projects/${id}` ).then(( project: Project ) => {
+    this.projectService.getProject( id ).then( project => {
       this.project = project;
-      this.global.pageConfig.breadcrumbs.push( this.project.breadcrumb )
+
+      this.config.script = 'iris.py',
+      this.config.data   = 'iris.csv'
 
       this.dataAvailable = true;
     })
@@ -108,5 +112,26 @@ export class ProjectDetailsComponent implements OnInit {
   //   this.service.sortColumn = column;
   //   this.service.sortDirection = direction;
   // }
+
+
+  // runJob() {
+  //   this.api.post('/api/jobs', {
+  //   	"job": {
+  //   		"language": "python",
+  //   		"script": "iris.py",
+  //   		"data": "iris.csv"
+  //   	}
+  //   })
+  //   .then(resp => {
+  //     console.log(resp)
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
+  // }
+
+  runJob() {
+    this.router.navigate([`/account/projects/${this.project.uuid}/jobs/1563891000849`])
+  }
 
 }

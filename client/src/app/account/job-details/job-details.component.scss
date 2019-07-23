@@ -1,4 +1,3 @@
-
 @import '../../../variables';
 
 .project-header {
@@ -35,34 +34,29 @@
   }
 }
 
-.script-check {
-  font-size: 36px;
-  line-height: 50px;
-  float: right;
-  color: #aaa;
-  &.valid {
-    color: $primary
+.action-bar {
+  & button {
+    margin-right: 15px;
+    font-size:14px;
+    & .fas {
+      padding-right: 15px;
+    }
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
-.remove-env {
-  font-size: 24px;
-  line-height: 50px;
-  color: #555;
-  margin-left: 5px;
-}
+.terminal {
+  background: black;
+  padding: 20px;
+  overflow: hidden;
 
-.units {
-  line-height: 50px;
-}
-
-small {
-  display: block;
-  font-size: 10px;
-  margin-bottom: 3px;
-}
-
-.actions {
-  margin-top: 70px;
-  padding-right: 30px;
+  & .video-container {
+    position: relative;
+    overflow: hidden;
+    & video {
+      position: relative;
+      top: -5px;
+    }
+  }
 }
