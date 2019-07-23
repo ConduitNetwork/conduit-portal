@@ -104,6 +104,10 @@ input {
   box-shadow: none!important;
 }
 
+.form-control {
+  height: initial;
+}
+
 .form-control:focus {
   border-color: $primary;
 }

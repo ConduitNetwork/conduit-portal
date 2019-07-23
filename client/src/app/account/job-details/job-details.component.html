@@ -1,0 +1,51 @@
+<div *ngIf="dataAvailable">
+  <div class="project-header">
+    <div class="image">{{project.name[0]}}</div>
+    <div class="project-details">
+      <h2 class="mb-1">{{project.name}}</h2>
+      <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+    </div>
+    <!-- <h4 class="job-count" [routerLink]="['../']" fragment="jobs">{{jobs.length}} Jobs</h4> -->
+  </div>
+  <hr>
+  <div class="action-bar row">
+    <div class="col-9">
+      <button type="button" class="btn status btn-sm btn-outline-dark p-7">
+        <span *ngIf="running">
+          <i class="fas fa-cog fa-spin"></i> running
+        </span>
+        <span *ngIf="!running">
+          <i class="fas fa-check"></i> finished
+        </span>
+      </button>
+      <span>{{job.id}}</span>
+      <span>{{job.starttime}}</span>
+    </div>
+    <div class="col-3">
+      <button [disabled]="running" (click)="global.href('https://openconduit.cloud/infrastructure/storage/buckets/1/tree/jobs/job-1563891000849', true, !running)" type="button" class="btn btn-block btn-lg btn-primary">
+        VIEW RESULTS
+      </button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-9">
+      <div class="terminal">
+        <div class="video-container">
+          <video id="job-video" autoplay muted height="550" name="iris" src="/assets/videos/{{job.video}}"></video>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <h4>Configuration</h4>
+      <div>
+        <div>Script: iris.py</div>
+        <div>Dataset: iris.csv</div>
+
+      <div>
+      <!-- <pre>{{job | json}}</pre> -->
+    </div>
+  </div>
+</div>

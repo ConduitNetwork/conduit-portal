@@ -32,8 +32,8 @@
       </div>
     </div>
   </div>
-  <a [routerLink]="['/account/projects', '123']" *ngFor="let project of projects | filterBy: projectFilter" class="list-group-item flex-column align-items-start">
-    <div class="image">{{project.name[0]}}</div>
+  <a [routerLink]="['/account/projects', project.uuid]" *ngFor="let project of projects | filterBy: projectFilter" class="list-group-item flex-column align-items-start">
+    <!-- <div class="image">{{project.name}}</div> -->
     <div class="d-flex justify-content-between">
       <div>
         <h4 class="mb-1">{{project.name}}</h4>

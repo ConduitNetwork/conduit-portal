@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface Breadcrumb {
-  label:       string;
-  id:          string;
-  routeUrl:    string;
-  description: string;
+  label:        string;
+  id?:          string;
+  routeUrl:     string;
+  description?: string;
 }
 
 export interface PageConfig {

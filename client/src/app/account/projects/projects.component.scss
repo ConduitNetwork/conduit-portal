@@ -60,6 +60,9 @@
   border-bottom: 1px solid #ddd !important;
   margin-bottom: 1px;
   color: inherit!important;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 

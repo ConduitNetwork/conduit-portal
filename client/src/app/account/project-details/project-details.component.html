@@ -1,250 +1,194 @@
 <div *ngIf="dataAvailable">
-  <div class="project-header">
-    <div class="image">{{project.name[0]}}</div>
-    <div class="project-details">
-      <h2 class="mb-1">{{project.name}}</h2>
-      <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+  <div class="row">
+    <div class="project-header col-10">
+      <div class="image">{{project.name[0]}}</div>
+      <div class="project-details">
+        <h2 class="mb-1">{{project.name}}</h2>
+        <h5 class="mb-0 text-secondary">{{project.description}}</h5>
+      </div>
+      <!-- <button type="button" (click)="runJob()" class="btn btn-block btn-primary mt-4">RUN JOB</button> -->
+      <!-- <h4 class="job-count" [routerLink]="['jobs']">{{jobs.length}} Jobs</h4> -->
     </div>
-    <h4 class="job-count" [routerLink]="['../']" fragment="jobs">{{jobs.length}} Jobs</h4>
+    <div class="col-2">
+      <button type="button" (click)="runJob()" class="btn btn-block btn-primary mt-5 ml-auto">RUN JOB</button>
+    </div>
   </div>
 
-  <ngb-accordion #acc [closeOthers]="false" activeIds="configure, jobs"> <!-- (panelChange) -->
-    <ngb-panel id="configure">
-      <ng-template ngbPanelTitle>
-        <span>
-          <fa-icon [icon]="acc.isExpanded('configure') ? 'chevron-up' : 'chevron-down'"></fa-icon>
-          Configure
-        </span>
-      </ng-template>
-      <ng-template ngbPanelContent>
-        <form class="row">
-          <div class="col-6">
+  <hr>
 
-            <!-- manager script -->
-            <div class="form-group">
-              <label for="planPrice">MANAGER SCRIPT PATH</label>
-              <div class="form-row">
-                <div class="col-7">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-4">
-                  <button type="button" class="btn btn-block btn-outline-dark">Choose...</button>
-                </div>
-                <div class="col-1">
-                  <fa-icon class="script-check" [ngClass]="{'valid': true}" [icon]="true ? 'check-circle' : 'exclamation-circle'"></fa-icon>
-                </div>
-              </div>
-            </div>
+  <form class="row mb-5">
+    <div class="col-6">
+      <!-- manager script -->
+      <div class="form-group">
+        <label for="planPrice">SCRIPT PATH</label>
+        <div class="form-row">
+          <div class="col-7">
+            <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.script">
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-block btn-outline-dark">Choose...</button>
+          </div>
+          <div class="col-1">
+            <fa-icon class="script-check" [ngClass]="{'valid': true}" [icon]="true ? 'check-circle' : 'exclamation-circle'"></fa-icon>
+          </div>
+        </div>
+      </div>
 
-            <!-- environment variables -->
-            <div class="form-group">
-              <label for="planPrice">ENVIRONMENT VARIABLES</label>
-              <div class="form-row">
-                <div class="col-5">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-6">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-1">
-                  <fa-icon class="remove-env" icon="times"></fa-icon>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-5">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-6">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-1">
-                  <fa-icon class="remove-env" icon="times"></fa-icon>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-5">
-                  <button type="button" class="btn btn-block btn-outline-dark">ADD VARIABLE</button>
-                </div>
-              </div>
-            </div>
+      <!-- environment variables -->
+      <div class="form-group">
+        <label for="planPrice">ENVIRONMENT VARIABLES</label>
+        <div class="form-row">
+          <div class="col-5">
+            <input type="text" name="projectPath" class="form-control">
           </div>
           <div class="col-6">
-
-            <!-- worker script path -->
-            <div class="form-group">
-              <label for="planPrice">WORKER SCRIPT PATH</label>
-              <div class="form-row">
-                <div class="col-7">
-                  <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.path">
-                </div>
-                <div class="col-4">
-                  <button type="button" class="btn btn-block btn-outline-dark">Choose...</button>
-                </div>
-                <div class="col-1">
-                  <fa-icon class="script-check" [ngClass]="{'valid': false}" [icon]="false ? 'check-circle' : 'exclamation-circle'"></fa-icon>
-                </div>
-              </div>
-            </div>
-
-            <!-- language & os -->
-            <!-- <div class="form-group">
-              <div class="form-row">
-                <div class="col-6">
-                  <label for="planPrice">LANGUAGE</label>
-                  <ng-select name="projectLanguage" [searchable]="false" [(ngModel)]="config.language">
-                    <ng-option *ngFor="let language of global.languages" [value]="language.name" [disabled]="false" >
-                      {{language.label}}
-                    </ng-option>
-                  </ng-select>
-                </div>
-                <div class="col-6">
-                  <label for="planPrice">OPERATING SYSTEM</label>
-                  <ng-select name="projectOs" [searchable]="false" [(ngModel)]="config.os">
-                    <ng-option *ngFor="let os of global.operatingSystems" [value]="os.name" [disabled]="false" >
-                      {{os.label}}
-                    </ng-option>
-                  </ng-select>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- resource requirements -->
-            <!-- CPU -->
-            <div class="form-group">
-              <label>RESOURCE REQUIREMENTS</label>
-              <div class="form-row">
-                <div class="col-9">
-                  <small class="text-muted">CPU CORES</small>
-                  <mv-slider [(value)]="config.cpu" [ticks]="[1,2,3,4]"></mv-slider>
-                </div>
-                <div class="col-2">
-                  <input type="text" name="configCpu" class="form-control" [(ngModel)]="config.cpu">
-                </div>
-                <div class="col-1 text-center">
-                  <span class="units">-</span>
-                </div>
-              </div>
-            </div>
-            <!-- GPU -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-9">
-                  <small class="text-muted">GPU CORES</small>
-                  <mv-slider [(value)]="config.gpu" [ticks]="[1,2,3,4]"></mv-slider>
-                </div>
-                <div class="col-2">
-                  <input type="text" name="configGpu" class="form-control" [(ngModel)]="config.gpu">
-                </div>
-                <div class="col-1 text-center">
-                  <span class="units">-</span>
-                </div>
-              </div>
-            </div>
-            <!-- RAM -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-9">
-                  <small class="text-muted">RAM</small>
-                  <mv-slider [(value)]="config.ram" [ticks]="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"></mv-slider>
-                </div>
-                <div class="col-2">
-                  <input type="text" name="configRam" class="form-control" [(ngModel)]="config.ram">
-                </div>
-                <div class="col-1 text-center">
-                  <span class="units">GB</span>
-                </div>
-              </div>
-            </div>
-            <!-- STORAGE -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-9">
-                  <small class="text-muted">STORAGE</small>
-                  <mv-slider [(value)]="config.storage" [ticks]="[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40]"></mv-slider>
-                </div>
-                <div class="col-2">
-                  <input type="text" name="configStorage" class="form-control" [(ngModel)]="config.storage">
-                </div>
-                <div class="col-1 text-center">
-                  <span class="units">GB</span>
-                </div>
-              </div>
-            </div>
+            <input type="text" name="projectPath" class="form-control">
           </div>
-          <!-- actions -->
-          <div class="col-12 actions">
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-4"></div>
-                <div class="col-2">
-                  <button type="button" class="btn btn-block btn-outline-dark ml-2">CANCEL</button>
-                </div>
-                <div class="col-2">
-                  <button type="button" class="btn btn-block btn-outline-dark ml-2">RESET</button>
-                </div>
-                <div class="col-4">
-                  <button type="button" class="btn btn-block btn-primary ml-2">SAVE CHANGES</button>
-                </div>
-              </div>
-            </div>
+          <div class="col-1">
+            <fa-icon class="remove-env" icon="times"></fa-icon>
           </div>
-        </form>
-      </ng-template>
-    </ngb-panel>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-5">
+            <input type="text" name="projectPath" class="form-control" >
+          </div>
+          <div class="col-6">
+            <input type="text" name="projectPath" class="form-control" >
+          </div>
+          <div class="col-1">
+            <fa-icon class="remove-env" icon="times"></fa-icon>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-5">
+            <button type="button" class="btn btn-block btn-outline-dark">ADD VARIABLE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
 
-    <ngb-panel id="jobs">
-      <ng-template ngbPanelTitle>
-        <span>
-          <fa-icon [icon]="acc.isExpanded('jobs') ? 'chevron-up' : 'chevron-down'"></fa-icon>
-          Jobs
-        </span>
-        <!-- <div class="form-group form-inline">
-          <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="jobSearch"/>
-        </div> -->
-      </ng-template>
-      <ng-template ngbPanelContent>
-        <form>
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th scope="col" sortable="status" (sort)="onSort($event)">Status</th>
-              <th scope="col" sortable="id" (sort)="onSort($event)">Job ID</th>
-              <th scope="col" sortable="starttime" (sort)="onSort($event)">Start Time</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let job of jobs" [routerLink]="['./jobs', job.uuid]">
-              <td>
-                <ngb-highlight [result]="'running'" [term]="jobSearch"></ngb-highlight>
-              </td>
-              <td>
-                <ngb-highlight [result]="job.uuid" [term]="jobSearch"></ngb-highlight>
-              </td>
-              <td>
-                <ngb-highlight [result]="job.starttime" [term]="jobSearch"></ngb-highlight>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+      <!-- worker script path -->
+      <div class="form-group">
+        <label for="planPrice">DATASET PATH</label>
+        <div class="form-row">
+          <div class="col-7">
+            <input type="text" name="projectPath" class="form-control" [(ngModel)]="config.data">
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-block btn-outline-dark">Choose...</button>
+          </div>
+          <div class="col-1">
+            <fa-icon class="script-check" [ngClass]="{'valid': false}" [icon]="false ? 'check-circle' : 'exclamation-circle'"></fa-icon>
+          </div>
+        </div>
+      </div>
 
-          <!-- <div class="d-flex justify-content-between p-2">
-            <ngb-pagination
-              [collectionSize]="jobs.length" [(page)]="service.page" [pageSize]="service.pageSize">
-            </ngb-pagination>
+      <!-- language & os -->
+      <!-- <div class="form-group">
+        <div class="form-row">
+          <div class="col-6">
+            <label for="planPrice">LANGUAGE</label>
+            <ng-select name="projectLanguage" [searchable]="false" [(ngModel)]="config.language">
+              <ng-option *ngFor="let language of global.languages" [value]="language.name" [disabled]="false" >
+                {{language.label}}
+              </ng-option>
+            </ng-select>
+          </div>
+          <div class="col-6">
+            <label for="planPrice">OPERATING SYSTEM</label>
+            <ng-select name="projectOs" [searchable]="false" [(ngModel)]="config.os">
+              <ng-option *ngFor="let os of global.operatingSystems" [value]="os.name" [disabled]="false" >
+                {{os.label}}
+              </ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div> -->
 
-            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
-              <option [ngValue]="2">2 items per page</option>
-              <option [ngValue]="4">4 items per page</option>
-              <option [ngValue]="6">6 items per page</option>
-            </select>
-          </div> -->
-
-        </form>
-      </ng-template>
-    </ngb-panel>
-  </ngb-accordion>
+      <!-- resource requirements -->
+      <!-- CPU -->
+      <div class="form-group">
+        <label>RESOURCE REQUIREMENTS</label>
+        <div class="form-row">
+          <div class="col-9">
+            <small class="text-muted">CPU CORES</small>
+            <mv-slider [(value)]="config.cpu" [ticks]="[1,2,3,4]"></mv-slider>
+          </div>
+          <div class="col-2">
+            <input type="text" name="configCpu" class="form-control" [(ngModel)]="config.cpu">
+          </div>
+          <div class="col-1 text-center">
+            <span class="units">-</span>
+          </div>
+        </div>
+      </div>
+      <!-- GPU -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-9">
+            <small class="text-muted">GPU CORES</small>
+            <mv-slider [(value)]="config.gpu" [ticks]="[1,2,3,4]"></mv-slider>
+          </div>
+          <div class="col-2">
+            <input type="text" name="configGpu" class="form-control" [(ngModel)]="config.gpu">
+          </div>
+          <div class="col-1 text-center">
+            <span class="units">-</span>
+          </div>
+        </div>
+      </div>
+      <!-- RAM -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-9">
+            <small class="text-muted">RAM</small>
+            <mv-slider [(value)]="config.ram" [ticks]="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"></mv-slider>
+          </div>
+          <div class="col-2">
+            <input type="text" name="configRam" class="form-control" [(ngModel)]="config.ram">
+          </div>
+          <div class="col-1 text-center">
+            <span class="units">GB</span>
+          </div>
+        </div>
+      </div>
+      <!-- STORAGE -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-9">
+            <small class="text-muted">STORAGE</small>
+            <mv-slider [(value)]="config.storage" [ticks]="[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40]"></mv-slider>
+          </div>
+          <div class="col-2">
+            <input type="text" name="configStorage" class="form-control" [(ngModel)]="config.storage">
+          </div>
+          <div class="col-1 text-center">
+            <span class="units">GB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- actions -->
+    <div class="col-12 actions">
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-4"></div>
+          <div class="col-2">
+            <button type="button" class="btn btn-block btn-outline-dark ml-2">CANCEL</button>
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-block btn-outline-dark ml-2">RESET</button>
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-block btn-primary ml-2">SAVE CHANGES</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
