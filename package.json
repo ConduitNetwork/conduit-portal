@@ -54,7 +54,7 @@
     "mailchimp-api-v3": "^1.13.0",
     "rsync": "^0.6.1",
     "simple-ssh": "^1.0.0",
-    "ssh2": "^0.8.4"
+    "ssh2": "^1.4.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
